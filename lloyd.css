@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+
+header {
+    background: rgba(34, 34, 34, 0.96);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 173, 181, 0.25);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #00adb5;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.logo:hover {
+    color: white;
+    transform: translateY(-1px);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav ul li a {
+    position: relative;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 9px 13px;
+    border-radius: 7px;
+    transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    bottom: 4px;
+    height: 2px;
+    background-color: #00adb5;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+}
+
+nav ul li a:hover {
+    color: #00adb5;
+    background-color: rgba(0, 173, 181, 0.08);
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+.home {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background:
+        radial-gradient(circle at 50% 45%, rgba(0, 173, 181, 0.12), transparent 30%),
+        radial-gradient(circle at 10% 10%, rgba(0, 173, 181, 0.20), transparent 25%),
+        radial-gradient(circle at 90% 85%, rgba(0, 173, 181, 0.14), transparent 28%),
+        linear-gradient(135deg, #0d151c 0%, #17232c 48%, #242c35 100%);
+    background-size: auto, auto, auto, auto;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Soft glowing circles */
+.home::before,
+.home::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.home::before {
+    width: 520px;
+    height: 520px;
+    top: -300px;
+    left: -170px;
+    border: 1px solid rgba(0, 173, 181, 0.28);
+    box-shadow:
+        0 0 70px rgba(0, 173, 181, 0.10),
+        inset 0 0 70px rgba(0, 173, 181, 0.05);
+}
+
+.home::after {
+    width: 620px;
+    height: 620px;
+    right: -350px;
+    bottom: -390px;
+    border: 1px solid rgba(0, 173, 181, 0.22);
+    box-shadow:
+        0 0 90px rgba(0, 173, 181, 0.10),
+        inset 0 0 90px rgba(0, 173, 181, 0.05);
+}
+
+/* Subtle tech grid */
+.home-content {
+    max-width: 760px;
+    position: relative;
+    z-index: 2;
+    padding: 45px 55px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    background: rgba(10, 18, 24, 0.28);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.20);
+    backdrop-filter: blur(4px);
+}
+
+.home-content::before {
+    content: "";
+    position: absolute;
+    inset: -80px;
+    z-index: -1;
+    background-image:
+        linear-gradient(rgba(0, 173, 181, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 173, 181, 0.045) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(circle, black 0%, transparent 72%);
+    pointer-events: none;
+}
+
+.home h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
+}
+
+.home h1 span {
+    color: #00adb5;
+    text-shadow: 0 0 22px rgba(0, 173, 181, 0.25);
+}
+
+.home h2 {
+    margin-bottom: 20px;
+}
+
+.home p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
+.btn,
+button {
+    background-color: #00adb5;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover,
+button:hover {
+    background-color: #008c94;
+}
+
+
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+.section > h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.profile-picture img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #00adb5;
+}
+
+.about-content p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    background-color: white;
+    width: 300px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill h3 {
+    color: #00adb5;
+    margin-bottom: 15px;
+}
+
+
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project {
+    background-color: white;
+    width: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+    color: #00adb5;
+    margin-bottom: 15px;
+}
+
+.project p {
+    line-height: 1.6;
+}
+
+
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin: 10px;
+}
+
+
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+    .home-content {
+        padding: 35px 24px;
+        border-radius: 18px;
+    }
+
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home h1 {
+        font-size: 35px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
